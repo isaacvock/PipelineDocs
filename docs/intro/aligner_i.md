@@ -34,4 +34,5 @@ There are several ways to run THE_Aligner:
 
 1. [Deploying with Snakedeploy](deploy.md) (recommended)
     * A Simon Lab/Yale specific version of these instructions are [here](simon.md). While highly specific, this also includes instructions for optimized deployment on a cluster using a Slurm scheduler, and could thus be of some general use.
+    * Information about configuring THE_Aligner is [here](../configuration/aligner_c.md).
 1. [Cloning the repo locally](alt.md)
