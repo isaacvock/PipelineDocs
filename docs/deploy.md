@@ -32,7 +32,7 @@ snakedeploy deploy-workflow <path to pipeline git> . --branch main
 snakemake --cores all --use-conda 
 ```
 
-## Setup
+## Detailed instructions
 
 There are 4 steps required to get up and running with THE_Aligner
 

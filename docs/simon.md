@@ -38,7 +38,7 @@ module purge
 sbatch run_slurm.sh
 ```
 
-## Setup
+## Detailed instructions
 
 As YCRC has already installed miniconda on all clusters, there are 3 steps required to get up and running with THE_Aligner on Yale HPC:
 
