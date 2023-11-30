@@ -1,5 +1,5 @@
-site_name: PROseq_etal
-site_url: https://.readthedocs.io/en/latest/
+site_name: PipelineDocs
+site_url: https://pipelinedocs.readthedocs.io/en/latest/
 nav:
   - Introduction: index.md
   - General Information:
