@@ -1,6 +1,6 @@
-# Deploying THE_Aligner
+# Running a Snakemake pipeline
 
-This page provides instructions for running a Snakemake pipeline. The Quickstart section includes a code block that succinctly lays out all of the required steps. The Setup section goes into more detail about each step touched upon in the Quickstart.
+This page provides instructions for running Snakemake pipelines. The Quickstart section includes a code block that succinctly lays out all of the required steps. The Setup section goes into more detail about each step touched upon in the Quickstart.
 
 ## Quickstart
 
@@ -108,7 +108,7 @@ In the `config/` directory you will find a file named `config.yaml`. If you open
 
 ### Run it!<a name="run"></a>
 
-Once steps 1-3 are complete, THE_Aligner can be run from the directory you deployed the workflow to as follows:
+Once steps 1-3 are complete, a Snakemake pipeline can be run from the directory you deployed the workflow to as follows:
 
 ``` bash
 snakemake --cores all --use-conda
