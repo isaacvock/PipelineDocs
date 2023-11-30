@@ -18,6 +18,16 @@
 !.readthedocs.yaml
 !docs/images
 !docs/images/*
+!docs/intro
+!docs/intro/*
+!docs/output
+!docs/output/*
+!docs/faqs
+!docs/faqs/*
+!docs/configuration
+!docs/configuration/*
+!docs/architecture
+!docs/architecture/*
 !.snakemake-workflow-catalog.yml
 !.test/data/*
 !.test/config_ChIP/*
