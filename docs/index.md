@@ -1,0 +1,5 @@
+# Welcome my Snakemake pipeline deployment docs!
+
+Biologists often rely on computational pipelines to process and analyze their data. A pipeline is simply a set of operations to perform on data so that you can extract useful insights from the data. With the omics-revolution came a spike in demand for these kinds of pipelines, as methods like RNA-seq generate massive raw datasets that require computationally intensive, multi-step processing to interpret. One of the best way to build such pipelines is with workflow managers, of which there are several popular and powerful options (Snakemake, NextFlow, Cromwell, etc.).
+
+During my PhD, I became incredibly fond of Snakemake, and quickly realized just how transformative the modern generation of workflow managers are. They make building high quality, reproducible, and well organized pipelines easier than it has ever been. 
