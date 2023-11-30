@@ -53,7 +53,7 @@ The other parameters that can be altered are:
 * `FORMAT`: whether the reads are paired-end (PE) or single-end (SE).
 * `mut_tracks`: the type of mutation (e.g., T-to-C mutations) that sequencing tracks will be colored by. If you are most interested in the T-to-C mutational content, then `mut_tracks` should be TC. If G-to-A, then `mut_tracks` should be GA. If both, then `mut_tracks` should be "TC,GA".
 * `minqual`: Minimum base quality to call it a mutation.
-* `keepcols`: Names of columns to keep in cB.csv output file. See [Output](output.md) for details of columns you can keep.
+* `keepcols`: Names of columns to keep in cB.csv output file. See [bam2bakR's Output](../output/bam2bakR_o.md) for details of columns you can keep.
 * `spikename`: If spike-ins are present, this should be a string that is common to all gene_ids for spike-in transcripts in annotation gtf. For example, in Ensembl annotations for Drosophila melanogaster, all gene_ids start with "FBgn". Therefore, if you have Drosophila spike-ins, `spikename` should be "FBgn".
 * `normalize`: If True, then scale factor calculated with edgeR is used to normalize sequencing tracks.
 * `WSL`: whether you are running this on the Windows subsystem for linux (0 = yes; 1= no)
