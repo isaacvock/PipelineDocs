@@ -2,13 +2,15 @@ site_name: PROseq_etal
 site_url: https://.readthedocs.io/en/latest/
 nav:
   - Introduction: index.md
+  - General Information:
+    - Running Snakemake pipelines: deploy.md
+    - Snakemake on Yale HPC: simon.md
+    - Alternative deployment strategies: alt.md
+    - Tips and tricks: pragmatism.md
   - Pipelines:
     - bam2bakR: intro/bam2bakR_i.md
     - PROseq_etal: intro/proseq_i.md
     - THE_Aligner: intro/aligner_i.md
-  - Running Snakemake pipelines: deploy.md
-  - Snakemake on Yale HPC: simon.md
-  - Alternative deployment strategies: alt.md
   - Output:
     - bam2bakR Output: bam2bakR_o.md
     - PROseq_etal Output: proseq_o.md
@@ -21,7 +23,6 @@ nav:
     - bam2bakR: architecture/bam2bakR_a.md
     - PROseq_etal: architecture/proseq_a.md
     - THE_Aligner: architecture/aligner_a.md
-  - General information: pragmatism.md
   - Miscellaneous pipeline-specific info:
     - Making color-coded tracks with bam2bakR: tracks.md
   - FAQs:
