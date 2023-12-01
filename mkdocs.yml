@@ -12,9 +12,9 @@ nav:
     - PROseq_etal: intro/proseq_i.md
     - THE_Aligner: intro/aligner_i.md
   - Pipeline Output:
-    - bam2bakR's Output: bam2bakR_o.md
-    - PROseq_etal's Output: proseq_o.md
-    - THE_Aligner's Output: aligner_o.md
+    - bam2bakR's Output: output/bam2bakR_o.md
+    - PROseq_etal's Output: output/proseq_o.md
+    - THE_Aligner's Output: output/aligner_o.md
   - Configuration:
     - bam2bakR's config.yaml: configuration/bam2bakR_c.md
     - PROseq_etal's config.yaml: configuration/proseq_c.md
