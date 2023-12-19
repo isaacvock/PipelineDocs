@@ -20,7 +20,11 @@ cd path/to/working/directory
 # DEPLOY PIPELINE TO YOUR WORKING DIRECTORY (only need to do once)
 conda activate deploy_snakemake
 snakedeploy deploy-workflow <path to pipeline .git> . --branch main
-
+# Example <links to pipeline gits>:
+    # THE_Aligner: https://github.com/isaacvock/THE_Aligner.git
+    # PROseq_etal: https://github.com/isaacvock/PROseq_etal.git
+    # bam2bakR: https://github.com/simonlabcode/bam2bakR.git
+    
 ###
 # EDIT CONFIG FILE (need to do once for each new dataset)
 ###
