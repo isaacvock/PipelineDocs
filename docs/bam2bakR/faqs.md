@@ -6,7 +6,7 @@ If there are very few T-to-C mutations in the final cB.csv file (e.g., if sample
 
 Related to the first point, a good sanity check after running the pipeline is going into R and checking the raw mutation rates as such:
 
-```
+```r
 library(data.table)
 
 # To unzip and read cB, also need to have R.utils package installed
@@ -19,7 +19,7 @@ cB[,.(mutrate = sum(TC*n)/sum(nT*n), by = sample]
 
 Similarly, checking a counts.csv file for an abundance of A-to-G mutations can be done as follows:
 
-```
+```r
 library(data.table)
 
 counts <- fread("path/to/+s4U/counts.csv.gz")
