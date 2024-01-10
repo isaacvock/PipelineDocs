@@ -36,5 +36,5 @@ There are several ways to run PROseq_etal:
 
 1. [Deploying with Snakedeploy](../deploy.md) (recommended)
     * A Simon Lab/Yale specific version of these instructions are [here](../simon.md). While highly specific, this also includes instructions for optimized deployment on a cluster using a Slurm scheduler, and could thus be of some general use.
-    * Information about configuring PROseq_etal is [here](../configuration/proseq_c.md).
+    * Information about configuring PROseq_etal is [here](../proseq/configuration.md).
 1. [Cloning the repo locally](../alt.md)

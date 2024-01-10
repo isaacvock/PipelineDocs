@@ -35,5 +35,5 @@ There are a number of ways to use bam2bakR:
 
 1. [Deploying with Snakedeploy](../deploy.md) (recommended)
     * A Simon Lab/Yale specific version of these instructions are [here](../simon.md). While highly specific, this also includes instructions for optimized deployment on a cluster using a Slurm scheduler, and could thus be of some general use.
-    * Information about configuring bam2bakR is [here](../configuration/bam2bakR_c.md).
+    * Information about configuring bam2bakR is [here](../bam2bakR/configuration.md).
 1. [Cloning the repo locally](../alt.md)

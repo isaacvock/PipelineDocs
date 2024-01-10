@@ -33,3 +33,9 @@
 !.test/config_ChIP/*
 !.test/config_PROseq/*
 !.github/*
+!docs/bam2bakR
+!docs/proseq
+!docs/aligner
+!docs/bam2bakR/*
+!docs/proseq/*
+!docs/aligner/*

@@ -7,28 +7,26 @@ nav:
     - Snakemake on Yale HPC: simon.md
     - Alternative deployment strategies: alt.md
     - Tips and tricks: pragmatism.md
-  - Pipeline Introductions:
-    - bam2bakR: intro/bam2bakR_i.md
-    - PROseq_etal: intro/proseq_i.md
-    - THE_Aligner: intro/aligner_i.md
-  - Pipeline Output:
-    - bam2bakR's Output: output/bam2bakR_o.md
-    - PROseq_etal's Output: output/proseq_o.md
-    - THE_Aligner's Output: output/aligner_o.md
-  - Configuration:
-    - bam2bakR's config.yaml: configuration/bam2bakR_c.md
-    - PROseq_etal's config.yaml: configuration/proseq_c.md
-    - THE_Aligner's config.yaml: configuration/aligner_c.md
-  - Pipeline architecture:
-    - bam2bakR's layout: architecture/bam2bakR_a.md
-    - PROseq_etal's layout: architecture/proseq_a.md
-    - THE_Aligner's layout: architecture/aligner_a.md
+  - bam2bakR:
+    - Intro to bam2bakR: bam2bakR/intro.md
+    - Configuring bam2bakR: bam2bakR/configuration.md
+    - bam2bakR's Output: bam2bakR/output.md
+    - bam2bakR's Architecture: bam2bakR/architecture.md
+    - FAQs: bam2bakR/faqs.md
+  - PROseq_etal:
+    - Intro to PROseq_etal: proseq/intro.md
+    - Configuring PROseq_etal: proseq/configuration.md
+    - PROseq_etal's Output: proseq/output.md
+    - PROseq_etal's Architecture: proseq/architecture.md
+    - FAQs: proseq/faqs.md
+  - THE_Aligner:
+    - Intro to THE_Aligner: aligner/intro.md
+    - Configuring THE_Aligner: aligner/configuration.md
+    - THE_Aligner's Output: aligner/output.md
+    - THE_Aligner's Architecture: aligner/architecture.md
+    - FAQs: aligner/faqs.md
   - Miscellaneous pipeline-specific info:
     - Making color-coded tracks with bam2bakR: tracks.md
-  - FAQs:
-    - bam2bakR: faqs/bam2bakR_f.md
-    - PROseq_etal: faqs/proseq_f.md
-    - THE_Aligner: faqs/aligner_f.md
 theme: readthedocs
 markdown_extensions:
   - pymdownx.highlight:
