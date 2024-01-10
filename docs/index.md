@@ -9,24 +9,24 @@ During my PhD, I became incredibly fond of Snakemake, and quickly realized just 
 If you are here for information regarding one of my pipelines, I suggest checking out (in this order):
 
 1. The relevant introduction page. The pipelines I developed whose documentation is currently hosted here include:
-    - [bam2bakR](intro/bam2bakR_i.md)
-    - [THE_Aligner](intro/aligner_i.md)
-    - [PROseq_etal](intro/proseq_i.md)
+    - [bam2bakR](bam2bakR/intro.md)
+    - [THE_Aligner](aligner/intro.md)
+    - [PROseq_etal](proseq/intro.md)
 1. The general pipeline deployment instructions [page](deploy.md), or the Yale HPC-specific one if [relevant](simon.md). The latter also provides some information that may be useful to anyone running these pipelines on a shared computing system in which it is possible to request multiple jobs in parallel.
 1. The relevant configuration page:
-    - [bam2bakR](configuration/bam2bakR_c.md)
-    - [THE_Aligner](configuration/aligner_c.md)
-    - [PROseq_etal](configuration/proseq_c.md)
+    - [bam2bakR](bam2bakR/configuration.md)
+    - [THE_Aligner](aligner/configuration.md)
+    - [PROseq_etal](proseq/configuration.md)
 1. The tips and tricks [page](pragmatism.md) for general advice about Snakemake which might help demystify these pipelines a bit.
 1. Information about the output produced by each pipeline:
-    - [bam2bakR](output/bam2bakR_o.md)
-    - [THE_Aligner](output/aligner_o.md)
-    - [PROseq_etal](output/proseq_o.md)
+    - [bam2bakR](bam2bakR/output.md)
+    - [THE_Aligner](aligner/output.md)
+    - [PROseq_etal](proseq/output.md)
 
 While not currently populated (for the most part), other pages that may be useful to check out in the future if you are using my pipelines are:
 
 1. The FAQs for each pipeline, with some pipeline-specific debugging tips.
-    - [bam2bakR's](faqs/bam2bakR_f.md) already has some useful information there.
+    - [bam2bakR's](bam2bakR/faqs.md) already has some useful information there.
 1. The architecture section, which will go into great detail about how each and every step of the pipeline works.
 
 

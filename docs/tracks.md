@@ -1,6 +1,6 @@
 ## Making Color-Coded Sequencing Tracks
 
-As discussed briefly in [bam2bakR's Output](output/bam2bakR_o.md), one of the directories that bam2bakR will create in the `results/` directory is named `tracks`. This directory contains a number of .tdf files that can be loaded into igv. In this section, I will briefly describe how to make effective use of these tracks. An example of what these tracks should look like is presented below:
+As discussed briefly in [bam2bakR's Output](bam2bakR/output.md), one of the directories that bam2bakR will create in the `results/` directory is named `tracks`. This directory contains a number of .tdf files that can be loaded into igv. In this section, I will briefly describe how to make effective use of these tracks. An example of what these tracks should look like is presented below:
 
 ![Track](images/dcp2_igv.png)
 
