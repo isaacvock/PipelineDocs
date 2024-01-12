@@ -23,7 +23,7 @@ nav:
     - THE_Aligner's Output: aligner/output.md
     - FAQs: aligner/faqs.md
   - Miscellaneous pipeline-specific info:
-    - Making color-coded tracks with bam2bakR: tracks.md
+    - Color-coded tracks with bam2bakR: tracks.md
 theme: readthedocs
 markdown_extensions:
   - pymdownx.highlight:
