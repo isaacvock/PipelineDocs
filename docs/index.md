@@ -8,12 +8,12 @@ During my PhD, I became incredibly fond of Snakemake, and quickly realized just 
 
 If you are here for information regarding one of my pipelines, I suggest checking out (in this order):
 
+1. The general pipeline deployment instructions [page](deploy.md), or the Yale/slurm HPC-specific one if [relevant](simon.md), which are identical for all pipelines discussed in this website. The latter also provides some information that may be useful to anyone running these pipelines on a shared computing system in which it is possible to request multiple jobs in parallel.
 1. The relevant introduction page. The pipelines I developed whose documentation is currently hosted here include:
     - [bam2bakR](bam2bakR/intro.md)
     - [THE_Aligner](aligner/intro.md)
     - [PROseq_etal](proseq/intro.md)
-1. The general pipeline deployment instructions [page](deploy.md), or the Yale HPC-specific one if [relevant](simon.md). The latter also provides some information that may be useful to anyone running these pipelines on a shared computing system in which it is possible to request multiple jobs in parallel.
-1. The relevant configuration page:
+1. The relevant configuration page, which discusses the config parameters for each pipeline:
     - [bam2bakR](bam2bakR/configuration.md)
     - [THE_Aligner](aligner/configuration.md)
     - [PROseq_etal](proseq/configuration.md)
@@ -30,4 +30,4 @@ While not currently populated (for the most part), other pages that may be usefu
 1. The architecture section, which will go into great detail about how each and every step of the pipeline works.
 
 
-Everyone else should head to the general pipeline deployment instructions [page](deploy.md), or the Yale HPC-specific one if [relevant](simon.md), and then to the tips and tricks [page](pragmatism.md)!
+Everyone else should head to the general pipeline deployment instructions [page](deploy.md), or the Yale/slurm HPC-specific one if [relevant](simon.md), and then to the tips and tricks [page](pragmatism.md)!
