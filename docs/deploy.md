@@ -33,7 +33,7 @@ snakedeploy deploy-workflow <link to pipeline git> . --branch main
 # RUN PIPELINE
 
 # See [here](https://snakemake.readthedocs.io/en/stable/executing/cli.html) for details on all of the configurable parameters
-snakemake --cores all --use-conda 
+snakemake --cores all --use-conda --rerun-triggers mtime
 ```
 
 ## Detailed instructions
@@ -115,8 +115,16 @@ In the `config/` directory you will find a file named `config.yaml`. If you open
 Once steps 1-3 are complete, a Snakemake pipeline can be run from the directory you deployed the workflow to as follows:
 
 ``` bash
-snakemake --cores all --use-conda
+snakemake --cores all --use-conda --rerun-triggers mtime
 ```
+
+The `--rerun-triggers mtime` addition is a suggestion that will prevent the pipline from rerunning certain steps who's output already exists and who's input has not been modified since the last run. See [this post](https://github.com/snakemake/snakemake/issues/1694) for a discussion as to why this is necessary as of Snakemake version 7.8.0.
+
+Some additional parameters that you might find useful include:
+
+    - `--show-failed-logs`: When you include this, the log files for any rules that fail will be print to the screen. This can make it easier to figure out which steps went wrong and to quickly check the error messages.
+    - `--keep-going`: Including this will make Snakemake continue running independent rules even if one rule fails. Snakemake doesn't do this by default because the idea is if something went wrong in a rule, there could be upstream problems lurking that will plague all downstream rules. The `--keep-going` option can be useful in pipelines like bam2bakR though, where there are two independent rules at the end of the pipeline (makecB and maketdf) that don't need each other to complete successfully for the other to complete, and where one of the rules (maketdf) can fail due to a number of reasons (not enough available RAM, IGVtools bugs, etc.) that will not impact the other rule (makecB).
+
 There are **A LOT** of adjustable parameters that you can play with when running a Snakemake pipeline. I would point you to the [Snakemake documentation](https://snakemake.readthedocs.io/en/stable/executing/cli.html) 
 for the details on everything you can change when running the pipeline.
 
