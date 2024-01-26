@@ -1,6 +1,6 @@
 ## bam2bakR FAQs
 
-### Low number of T-to-C mutations in cB
+### Why are there a low number of T-to-C mutations in the cB?
 
 If there are very few T-to-C mutations in the final cB.csv file (e.g., if sample-wide mutation rates in +s4U samples are < 0.003), then you may have used the incorrect value for the `strandedness` parameter in the config. One way to tell if this is the case is by looking at one of the +s4U sample counts.csv files in `results/counts/` and checking for an abundance of A-to-G mutations. If this is the case, flip the value of `strandedness` to the opposite of whatever you used.
 
@@ -32,6 +32,67 @@ sum(counts$AG)/sum(counts$nA)
 # T-to-C mutation rate
 sum(counts$TC)/sum(counts$nT)
 ```
+
+### How can I run older versions of bam2bakR?
+
+There are a number of previous versions of bam2bakR that have "tags" on Github. If you go to the Github and click on the box that says "main" (which represents the branch being displayed), a dropdown menu will appear. In that menu, you will see two subsections labeled Branches and Tags. Click Tags to see the available tags. 
+
+Using one of the tagged versions is easy if you deployed bam2bakR using Snakedeploy. To do so, navigate to the Snakefile located in the "workflow" director created when you deploy the pipeline. It will look something like:
+
+```
+from snakemake.utils import min_version
+
+
+min_version("6.10.0")
+
+
+configfile: "config/config.yaml"
+
+
+# declare https://github.com/simonlabcode/bam2bakR as a module
+module bam2bakR:
+    snakefile:
+        github("simonlabcode/bam2bakR", path="workflow/Snakefile", branch="main")
+    config:
+        config
+
+
+# use all rules from https://github.com/simonlabcode/bam2bakR
+
+```
+
+The key part is:
+
+```
+# declare https://github.com/simonlabcode/bam2bakR as a module
+module bam2bakR:
+    snakefile:
+        github("simonlabcode/bam2bakR", path="workflow/Snakefile", branch="main")
+    config:
+        config
+```
+
+To use a tagged version, change `branch="main"` to `tag="<name of tag>"`. For example, to revert to version 2.0.1:
+
+```
+# declare https://github.com/simonlabcode/bam2bakR as a module
+module bam2bakR:
+    snakefile:
+        github("simonlabcode/bam2bakR", path="workflow/Snakefile", tag="2.0.1")
+    config:
+        config
+```
+
+This can also be set when deploying the workflow. For example, if you change your call to Snakedeploy to:
+
+```
+snakedeploy deploy-workflow https://github.com/simonlabcode/bam2bakR . --tag v2.0.1
+```
+
+this will deploy version 2.0.1.
+
+One challenge you may run into when trying to revert to an older version is that the config file parameters in the newer version may differ from those used by the older version. In this case, when you run the pipeline, you will get `KeyErrors` when running Snakemake. You can use these to track down which config file parameters are needed. What is probably easier though is to go to the bam2bakR Github and get the config file from the relevant tag.
+
 
 ### Lots of __ambiguous XF or GF
 
