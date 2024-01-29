@@ -12,6 +12,7 @@ nav:
     - Configuring bam2bakR: bam2bakR/configuration.md
     - bam2bakR's Output: bam2bakR/output.md
     - FAQs: bam2bakR/faqs.md
+    - Color-coded tracks with bam2bakR: tracks.md
   - PROseq_etal:
     - Intro to PROseq_etal: proseq/intro.md
     - Configuring PROseq_etal: proseq/configuration.md
@@ -22,8 +23,6 @@ nav:
     - Configuring THE_Aligner: aligner/configuration.md
     - THE_Aligner's Output: aligner/output.md
     - FAQs: aligner/faqs.md
-  - Miscellaneous pipeline-specific info:
-    - Color-coded tracks with bam2bakR: tracks.md
 theme: readthedocs
 markdown_extensions:
   - pymdownx.highlight:
