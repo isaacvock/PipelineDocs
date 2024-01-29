@@ -23,7 +23,9 @@ nav:
     - Configuring THE_Aligner: aligner/configuration.md
     - THE_Aligner's Output: aligner/output.md
     - FAQs: aligner/faqs.md
-theme: readthedocs
+theme: 
+  name: readthedocs
+  navigation_depth: 5
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
