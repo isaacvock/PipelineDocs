@@ -12,7 +12,7 @@ nav:
     - Configuring bam2bakR: bam2bakR/configuration.md
     - bam2bakR's Output: bam2bakR/output.md
     - FAQs: bam2bakR/faqs.md
-    - Color-coded tracks with bam2bakR: tracks.md
+    - Color-coded tracks: tracks.md
   - PROseq_etal:
     - Intro to PROseq_etal: proseq/intro.md
     - Configuring PROseq_etal: proseq/configuration.md

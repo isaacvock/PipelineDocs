@@ -1,47 +1,71 @@
 ## bam2bakR Output
 
-All output files will be placed in a directory named `results` that will be created the first time you run bam2bakR. The output of greatest interest, the gzipped cB.csv file, will be in `results/cB/`. Columns that can be kept in the final cB (see the keepcols option in the config to choose among these options) are:
+All output files will be placed in a directory named `results` that will be created the first time you run bam2bakR. The output of greatest interest, the gzipped cB.csv file, will be in `results/cB/`. The cB file is a tidy table where each row corresponds to data for a set of reads with identical values for the following columns:
 
-  * qname (read ID)
-  * nA (number of As in read)
-  * nC (number of Cs)
-  * nT (number of Ts)
-  * nG (number of Gs)
-  * rname (chromosome name)
-  * GF (ENSEMBL ID of gene to which read maps)
-  * EF (ENSEMBL ID of gene to which read maps if read overlaps any exonic region)
-  * XF (ENSEMBL ID of gene to which read maps if read only overlaps with exonic regions)
-  * FR (Strandedness of read; F = forward, R = reverse. Only will have F if single-end sequencing)
-  * sj (TRUE if read overlaps a splice junction)
-  * ai (TRUE if read overlaps any intronic region)
-  * io (TRUE if read exclusively overlaps an intronic region)
-  * ei (TRUE if read maps to intronic and exonic regions)
-  * TA (number of T-to-A mutations)
-  * CA (number of C-to-A mutations)
-  * GA (number of G-to-A mutations)
-  * AT (number of A-to-T mutations)
-  * CT (number of C-to-T mutations)
-  * GT (number of G-to-T mutations)
-  * NT (number of N-to-T mutations, where N is any nucleotide)
-  * AC (number of A-to-C mutations)
-  * TC (number of T-to-C mutations)
-  * GC (number of G-to-C mutations)
-  * NC (number of N-to-C mutations, where N is any nucleotide)
-  * AG (number of A-to-G mutations)
-  * TG (number of T-to-G mutations)
-  * CG (number of C-to-G mutations)
-  * NG (number of N-to-G mutations, where N is any nucleotide)
-  * AN (number of A-to-N mutations, where N is any nucleotide)
-  * TN (number of T-to-N mutations, where N is any nucleotide)
-  * CN (number of C-to-N mutations, where N is any nucleotide)
-  * GN (number of G-to-N mutations, where N is any nucleotide)
+  * sample (sample ID)
+  * GF: Gene ID for reads aligning anywhere in a gene (intron or exon)
+  * XF: Gene ID for reads aligning to exclusively exonic regions of a gene
+  * nT: Number of Ts in the reads (or As if the read comes from the reverse complement of the original RNA)
+  * TC: Number of T-to-C mutations in the reads
 
-The tdf files to make color-coded tracks are in: `results/tracks/`.
+The final column of the cB file is n, which represents the number of reads with the same value for sample, GF, XF, nT, and TC.
 
-Other output includes:
+**Other bam2bakR v3.0.0+ output includes**
 
-* Sorted and filtered bam files in `results/sf_reads/`
-* HTseq output text and bam files in `results/htseq/`
-* SNP calls in `results/snps/`
-* .csv files with counts of all mutation types in `results/counts/`
-* Scale factors calculated with edgeR in `results/normalization/`
+Processed bam files:
+
+* Sorted and filtered bam/sam files are in `results/sf_reads/`
+  - These are passed to the mutation counting and feature assignment scripts
+  - Sorting and filtering is accomplished with a custom shell script.
+
+Mutation counting output:
+
+* `<sampleID>_counts.csv.gz` files are in `results/counts/`
+  - Each row of this table corresponds to a single read or read pair
+  - The columns represent counts of every mutation type and every type of nucleotide
+  - These can be useful for tracking down problems in the mutation counting. See [FAQs](faqs.md) for details.
+  - Mutation counting is accomplished with a custom python script called by a custom shell script.
+
+Feature assignment with featureCounts
+
+* Tables of exonic read counts for each annotated gene are in `results/featurecounts_exons/<sampleID>.featureCounts`.
+* Table of detailed read assignment to exonic regions (in featureCounts' CORE format, a tsv file where each row provides information for where each read is assigned) are in `results/featurecounts_exons/<sampleID>.s.bam.featureCounts`.
+* Table of number of reads supporting each exon-exon junction are in `results/featurecounts_exons/<sampleID>.jcounts`.
+* Similar tables for assignment of reads to anywhere in a gene are in `results/featurecounts_genes`.
+
+
+Merged feature assignment and mutation counting:
+
+* Tables that have combined the exonic and gene feature assignment information with the mutation calling output are in `results/merge_feature_and_muts/<sampleID>_counts.csv.gz`. 
+  - If a read was not assigned to a particular feature type (i.e., exon or gene), then it will have an NA in the relevant feature column (XF for exons and GF for genes).
+
+
+Colored sequencing tracks:
+
+* .tdf files that can be used to make the sequencing tracks colored by mutational content (described [here](../tracks.md)) are in `results/tracks`
+  - Each sample has 12 .tdf files, named like `<sampleID>.TC.<#>.<strand>.tdf`, where `<#>` represents a number from 0 to 5 (number of T-to-C mutations in the reads used to make that file) and `<strand>` is either `pos` (plus strand) or `min` (minus strand).
+  - Currently, if your library is reverse stranded (i.e., first read in a pair represents reverse complement of original RNA sequence), then the plus and minus strand tracks will be flipped. This does not change interpretation of the tracks, you just have to be aware of that when using an annotation to visually decide what reads are the 
+  product of sense and antisense transcription.
+
+Single nucleotide polymorphism (SNP) calls:
+
+* SNP calls are in two formats (.txt and VCF)in the `results/snps/` directory.
+  - If you did not have any -s4U control samples, then the .vcf file will not exist and the .txt file will be empty
+  - These SNP calls are used to identify nucleotides which should be ignored for T-to-C mutation counting
+
+Normalization:
+
+* Scale factors calculated using edgeR's TMM strategy are located in `results/normalization/scale`
+  - This is a simple tab-delimited text file with two "columns", one corresponding to the sample ID, and the other corresponding to the scale factor
+  - These will be used to scale the heights of the sequencing tracks in `results/tracks/`.
+
+
+**Additional output if providing fastq's as input**
+
+Trimmed fastq files:
+
+* Cutadapt output is in `results/fastq_cut/`
+
+Bam files:
+
+* Alignments provided by whatever aligner you chose are in `results/bams/`
