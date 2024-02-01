@@ -3,12 +3,14 @@
 All output files will be placed in a directory named `results` that will be created the first time you run bam2bakR. The output of greatest interest, the gzipped cB.csv file, will be in `results/cB/`. The cB file is a tidy table where each row corresponds to data for a set of reads with identical values for the following columns:
 
   * sample (sample ID)
+  * rname: Chromosome name from which reads originated
+  * sj: TRUE if reads overlap an exon-exon splice junction
   * GF: Gene ID for reads aligning anywhere in a gene (intron or exon)
   * XF: Gene ID for reads aligning to exclusively exonic regions of a gene
   * nT: Number of Ts in the reads (or As if the read comes from the reverse complement of the original RNA)
   * TC: Number of T-to-C mutations in the reads
 
-The final column of the cB file is n, which represents the number of reads with the same value for sample, GF, XF, nT, and TC.
+The final column of the cB file is n, which represents the number of reads with the same value for sample, rname, sj, GF, XF, nT, and TC.
 
 **Other bam2bakR v3.0.0+ output**
 

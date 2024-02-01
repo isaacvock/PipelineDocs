@@ -4,18 +4,15 @@ bam2bakR is a Snakemake implementation of a portion of the [TimeLapse pipeline](
 
 ## What bam2bakR does
 
-bam2bakR currently includes the basic TimeLapse pipeline functionality downstream of alignment. Thus, the input to bam2bakR is a set of .bam files and the output is a cB.csv file, which as described on the TimeLapse pipeline bitbucket, contains by default the following columns:
+bam2bakR includes the basic TimeLapse pipeline functionality downstream of alignment. Thus, the input to bam2bakR is a set of .bam files and the output is a cB.csv file, which the following columns:
 
-* XF - Mature feature: ENSEMBL ID if the read mapped solely to exonic parts of a feature
-* GF - Gene feature: ENSEMBL ID when read is aligned to any part of feature (intronic or exonic)
-* rname - Chromosome name
-* nT - Number of uridines in read (additional columns are added if considering other types of mutations, like G-to-A mutations)
-* TC - Number of called T-to-C mutations in read (additional columns are added for other types of mutations)
-* sj - Logical: TRUE if read contains exon-exon spliced junction
-* ai - Logical: TRUE if read aligns to any intronic region
-* io - Logical: TRUE if read aligns to only intronic regions
-* ei - Logical: TRUE if read aligns to intronic and exonic regions
 * sample - Sample name
+* rname - Chromosome name
+* sj - Logical: TRUE if read overlaps an exon-exon splice junction
+* XF - Exonic feature: ENSEMBL ID if the read mapped solely to exonic parts of a gene
+* GF - Gene feature: ENSEMBL ID when read is aligned to any part of a gene (intronic or exonic)
+* nT - Number of uridines in RNA from which read was derived (additional columns are added if considering other types of mutations, like G-to-A mutations)
+* TC - Number of called T-to-C mutations in read (additional columns are added for other types of mutations)
 * n - Number of reads which have the identical set of values described above
 
 Additional columns can be included and any of these columns can be omitted per your choice.
