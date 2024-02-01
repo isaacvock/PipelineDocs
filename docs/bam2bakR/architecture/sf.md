@@ -1,5 +1,6 @@
 ## Rule for sorting and filtering a bam file
 
+This is most likely the first rule that will execute when you run bam2bakR. It sorts and filters an input bam file using SAMtools and some custom AWK code. Let's see how this works.
 
 ### Snakemake rule (in workflow/rules/bam2bakR.smk)
 
@@ -119,7 +120,7 @@ This script can be broken into four steps, as commented in the above code:
 
 ### Future improvements
 
-1) It's unclear why AWK is being used to filter reads with certain SAM flags. I am pretty sure samtools can do this all by itself, and I suspect it would be more efficient. Maybe I am wrong about the efficiency thing, but I will need to test that.
+1) It's unclear why AWK is being used to filter reads with certain SAM flags. I am pretty sure this can all be done with samtools, and I suspect it would be more efficient. Maybe I am wrong about the efficiency thing, but I will need to test that.
 2) Need to look into removing the redundant sorting of reads (and whether or not it is actually redundant).
 3) Creating and saving multiple intermediate bam files is just a waste of disk space. Let's not do that.
 

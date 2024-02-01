@@ -1,6 +1,6 @@
 ## The architecture of bam2bakR
 
-Here I will provide extensive information as to the inner workings of every step of bam2bakR. Like every Snakemake workflow, bam2bakR can be decomposed into a set of "rules", i.e. steps that accept some input and generate some output. Each rule has its own page linked below, where the code relevant to that rule will be posted and described. 
+Here I will provide extensive information as to the inner workings of every step of bam2bakR. Like every Snakemake workflow, bam2bakR can be decomposed into a set of "rules", i.e. steps that accept some input and generate some output. Each rule has its own page linked below, where the code relevant to that rule will be posted and described. A walkthrough of the general features of a Snakemake rule is provided in [Tips and Tricks](../pragmatism.md). The documentation on the first rule listed below (sort_filter) also goes into a bit more detail about the features common to most bam2bakR rules.
 
 ### bam2bakR version 3.0.0 rules (bam file input)
 
