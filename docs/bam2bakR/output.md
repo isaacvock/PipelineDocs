@@ -10,7 +10,7 @@ All output files will be placed in a directory named `results` that will be crea
 
 The final column of the cB file is n, which represents the number of reads with the same value for sample, GF, XF, nT, and TC.
 
-**Other bam2bakR v3.0.0+ output includes**
+**Other bam2bakR v3.0.0+ output**
 
 Processed bam files:
 
