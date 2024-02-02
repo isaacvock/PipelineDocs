@@ -42,6 +42,22 @@ module purge
 sbatch run_slurm.sh
 ```
 
+## Advice: set the SNAKEMAKE_CONDA_PREFIX environment variable
+
+TLDR: Follow these steps to create an environment variable called SNAKEMAKE_CONDA_PREFIX that will specify where to save conda environments that Snakemake creates:
+
+1) Create a folder in your project directory called `snakemake_envs`. Technically, you can call it whatever you want, it just has to be whatever you specify in step 5. This can be done by running `mkdir ~/project/snakemake_envs` from anywhere on the cluster.
+2) Go to your home directory (where you start when you log in. If you are in some other directory, you can run `cd ~` to get there).
+3) If you view all files with `ls -a`, you will see a hidden file called `.bashrc`. This is a script that gets executed everytime you log onto the cluster. Here, you can specify environment variables to be created everytime you log on.
+4) Prepare to edit .bashrc (e.g., run `vi .bashrc`, and then click `i` to enter editing mode).
+5) Add the following line of code at the bottom of your .bashrc file: `export SNAKEMAKE_CONDA_PREFIX=~/project/snakemake_envs`. This is just the path to the folder in your project directory that you created. 
+6) You can exit vi by running `:wq`. To create this new environment variable without logging out of the cluster, run `source ~/.bashrc` from anywhere on the cluster.
+
+Why do this? One of the most common annoyances I would run into when consistently using a Snakemake pipeline on the cluster was the need to recreate all of the pipeline environments. For context, when you run a Snakemake pipeline as described above for the first time, conda environments are created which will contain installations of all dependencies necessary for the various steps of the pipeline. By default, these conda environments will be saved in a hidden `.snakemake` directory in the directory that you launced the pipeline from. The problem is that since you should probably be running these kind of pipelines in your scratch60 folder (for Yale McCleary users), some of the installation files will get deleted in 60 days. This causes the pipeline to fail in weird ways and eventually forces you to recreate all environments by deleting the whole `.snakemake` directory.
+
+To avoid this, you can specify a different directory for Snakemake to save conda environments it creates. The easiest way to do this is to create an environment variable called SNAKEMAKE_CONDA_PREFIX and specify this directory. To do this, you can edit your .bashrc file, found in the directory you start in when you log into the cluster. This is what the instructions above explain how to do.
+
+
 ## Detailed instructions
 
 As YCRC has already installed miniconda on all clusters, there are 3 steps required to get up and running with THE_Aligner on Yale HPC:
