@@ -10,7 +10,7 @@ All of the steps necessary to deploy a pipeline are discussed in great detail be
 # CREATE ENVIRONMENT (only need to do once)
 salloc
 module load miniconda
-mamba create -c conda-forge -c bioconda --name deploy_snakemake snakemake snakedeploy
+mamba create -c conda-forge -c bioconda --name deploy_snakemake 'snakemake<8.0.0' snakedeploy
 
 # CREATE AND NAVIGATE TO WORKING DIRECTORY (only need to do once)
   # This should be in palmer_scratch or project directory if on Yale McCleary; not the home directory!!
