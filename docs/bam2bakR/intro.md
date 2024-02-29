@@ -9,8 +9,8 @@ bam2bakR includes the basic TimeLapse pipeline functionality downstream of align
 * sample - Sample name
 * rname - Chromosome name
 * sj - Logical: TRUE if read overlaps an exon-exon splice junction
-* XF - Exonic feature: ENSEMBL ID if the read mapped solely to exonic parts of a gene
-* GF - Gene feature: ENSEMBL ID when read is aligned to any part of a gene (intronic or exonic)
+* XF - Exonic feature: Gene ID if the read mapped solely to exonic parts of a gene
+* GF - Gene feature: Gene ID when read is aligned to any part of a gene (intronic or exonic)
 * nT - Number of uridines in RNA from which read was derived (additional columns are added if considering other types of mutations, like G-to-A mutations)
 * TC - Number of called T-to-C mutations in read (additional columns are added for other types of mutations)
 * n - Number of reads which have the identical set of values described above
