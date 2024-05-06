@@ -74,7 +74,7 @@ Snakemake pipelines can be deployed using the tool [Snakedeploy](https://snakede
 ``` bash
 salloc
 module load miniconda
-mamba create -c conda-forge -c bioconda --name deploy_snakemake snakemake snakedeploy
+mamba create -c conda-forge -c bioconda --name deploy_snakemake 'snakemake<8.0.0' snakedeploy
 ```
 
 Next, create a directory that you want to run the pipeline in (I'll refer to it as `workdir`) and move into it. This is best kept in your scratch60 directory to avoid using too much project directory disk space:
