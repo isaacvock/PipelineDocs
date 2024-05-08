@@ -1,6 +1,6 @@
 # Welcome to THE_Aligner
 
-THE_Aligner is a Snakemake pipeline developed by Isaac Vock. It is designed to process fastq files from various flavors of RNA-seq experiments and align them to a reference genome.
+[THE_Aligner](https://github.com/isaacvock/THE_Aligner) is a Snakemake pipeline developed by Isaac Vock. It is designed to process fastq files from various flavors of RNA-seq experiments and align them to a reference genome.
 
 ## What THE_Aligner does
 

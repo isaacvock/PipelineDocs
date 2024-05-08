@@ -1,6 +1,6 @@
 # Welcome to PROseq_etal
 
-PROseq_etal is a Snakemake pipeline developed by Isaac Vock. It is designed to process fastq files from PRO-seq and ChIP-seq experiments. Future development will see it also accomodate a number of other related modalities (e.g., NET-seq, ATAC-seq, etc.).
+[PROseq_etal](https://github.com/isaacvock/PROseq_etal) is a Snakemake pipeline developed by Isaac Vock. It is designed to process fastq files from PRO-seq and ChIP-seq experiments. Future development will see it also accomodate a number of other related modalities (e.g., NET-seq, ATAC-seq, etc.).
 
 ## What PROseq_etal does
 

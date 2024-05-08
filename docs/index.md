@@ -31,3 +31,8 @@ While not currently populated (for the most part), other pages that may be usefu
 
 
 Everyone else should head to the general pipeline deployment instructions [page](deploy.md), or the Yale/slurm HPC-specific one if [relevant](simon.md), and then to the tips and tricks [page](pragmatism.md)!
+
+Finally, if you want to check out the source code, links to the respective GitHub repos are below:
+- [bam2bakR](https://github.com/simonlabcode/bam2bakR/)
+- [THE_Aligner](https://github.com/isaacvock/THE_Aligner)
+- [PROseq_etal](https://github.com/isaacvock/PROseq_etal)
